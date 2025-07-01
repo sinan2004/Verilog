@@ -1,7 +1,7 @@
 `timescale 1ps / 0.1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: inQbe
-// Engineer: Muhammed Sinan N
+// Engineer: Muhammed Sinan N & Shamil CA
 // 
 // Create Date: 01.07.2025 10:18:52
 // Design Name: sine generation V 1
