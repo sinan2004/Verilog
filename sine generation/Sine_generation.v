@@ -1,25 +1,3 @@
-`timescale 10ns / 1ns
-//////////////////////////////////////////////////////////////////////////////////
-// Company: inQbe
-// Engineer: Muhammed Sinan N  & Shamil CA 
-// 
-// Create Date: 30.06.2025 17:06:00
-// Design Name: Sine generator 
-// Module Name: sine_generator
-// Project Name: Sine generation using pwm 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 module sine_generator(
     input clk,
     input reset,
@@ -33,8 +11,9 @@ module sine_generator(
     reg[7:0] sin_table[0:255];
     reg [7:0]address;
     reg [7:0]counter ; 
-    assign arr = 8'b101;
+    assign arr = 8'd100;
     initial begin
+    counter = 8'b0;
     address = 1'b0;
     ccr = 1'b0;
     
@@ -110,7 +89,7 @@ end
             
             ccr = sin_table[address];
             sin_reg = ccr;
-            address = address +1'b1;
+            
             counter = counter + 1'b1;
             update_c = counter;
 
@@ -125,6 +104,7 @@ end
             end else begin 
             pwm = 1'b0;                 //else 2
             counter = 0;
+            address = address +1'b1;
              end
          
         end else begin 
